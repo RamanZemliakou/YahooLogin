@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace YahooLoginTest
 
         public void PasswordInput()
         {
+            //WebDriverWait wait = new WebDriverWait(_webDriver, TimeSpan.FromSeconds(5));
+            //wait.Until(ExpectedConditions.ElementIsVisible(_passwordField));
             Thread.Sleep(1000); //wait until element to be interactible
             _webDriver.FindElement(_passwordField).SendKeys(_password);
             _webDriver.FindElement(_submitButton).Click();
